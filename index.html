@@ -107,15 +107,23 @@
   .nav-links a:hover { color: var(--text); }
   .nav-links a:hover::after { transform: scaleX(1); }
 
+  .hero-name-photo {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 12px;
+  }
   .profile-wrap {
     margin-bottom: 40px;
   }
   .profile-img-box {
-    width: 220px;
-    height: 260px;
+    width: 100px;
+    height: 120px;
     position: relative;
     overflow: hidden;
     border: 1px solid var(--border);
+    flex-shrink: 0;
+    margin-top: 8px;
   }
   .profile-img {
     width: 100%;
@@ -640,7 +648,6 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -649,14 +656,22 @@
   <div class="hero-bg-text">DEV</div>
   <div class="hero-content">
     <div class="hero-tag">Frontend Developer · Incheon, Korea</div>
-    <h1 class="hero-name">백정민<em>.</em></h1>
-    <div class="hero-role">Frontend Engineer</div>
+    <div class="hero-name-photo">
+      <div class="profile-img-box">
+        <img src="profile.jpg" alt="프로필 사진" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="profile-placeholder"><span>사진</span></div>
+      </div>
+      <div>
+        <h1 class="hero-name">백정민<em>.</em></h1>
+        <div class="hero-role">Frontend Engineer</div>
+      </div>
+    </div>
     <p class="hero-desc">
-      사용자 경험을 설계하고 코드로 현실화하는 프론트엔드 개발자입니다.<br>
-      성능과 접근성을 중시하며, 아름다운 인터페이스를 만듭니다.
+      Vue.js · Spring Boot 기반 금융 서비스 개발 5년차.<br>
+      핀테크 도메인에서 AI 챗봇, 투자 플랫폼 등 실서비스를 만들어왔습니다.
     </p>
     <div class="hero-contact-info">
-      <span class="contact-item">📧 wjdals09812@email.com</span>
+      <span class="contact-item">📧 wjdals09812@naver.com</span>
       <span class="contact-item">📱 010-9965-6497</span>
     </div>
     <div class="hero-cta">
@@ -666,14 +681,6 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="profile-wrap">
-      <div class="profile-img-box">
-        <img src="profile.jpg" alt="프로필 사진" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="profile-placeholder">
-          <span>사진을<br>넣어주세요</span>
-        </div>
-      </div>
-    </div>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-num">5+</div>
