@@ -351,6 +351,43 @@
     margin-top: 8px;
   }
 
+  .chart-section {
+    margin-top: 60px;
+  }
+  .chart-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+  .charts-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 48px;
+  }
+  .chart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .donut {
+    width: 100px;
+    height: 100px;
+  }
+  .chart-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+  .chart-pct {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
   /* ---- SKILLS ---- */
   .skills { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .skills-grid {
@@ -411,6 +448,78 @@
     width: 0;
     transition: width 1.2s ease;
   }
+
+  /* ---- HERO BG GRAPHIC ---- */
+  .hero-graphic {
+    position: absolute;
+    top: 50%; right: 5%;
+    transform: translateY(-50%);
+    width: 340px; height: 340px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.06;
+  }
+  .hero-graphic circle { fill: none; stroke: var(--accent); }
+  .hero-graphic line { stroke: var(--accent); stroke-width: 1; }
+
+  /* ---- PROJECT PERIOD BAR ---- */
+  .project-period {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .period-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .period-bar {
+    flex: 1;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    max-width: 120px;
+  }
+  .period-bar-fill {
+    height: 100%;
+    background: var(--accent2);
+    border-radius: 2px;
+    width: 0;
+    transition: width 1.2s ease;
+  }
+
+  /* ---- TIMELINE ---- */
+  .exp-list { list-style: none; position: relative; }
+  .exp-list::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .exp-item {
+    padding: 0 0 36px 32px;
+    border-bottom: none;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    position: relative;
+  }
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .exp-item:first-child { border-top: none; }
 
   /* ---- PROJECTS ---- */
   .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
@@ -484,17 +593,29 @@
   .about-body { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 40px; }
   .about-body strong { color: var(--text); font-weight: 400; }
   .about-right {}
-  .exp-list { list-style: none; }
+  .exp-list { list-style: none; position: relative; }
   .exp-item {
-    padding: 28px 0;
-    border-bottom: 1px solid var(--border);
+    padding: 0 0 40px 32px;
+    border-bottom: none;
+    position: relative;
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 180px 1fr;
     gap: 24px;
-    transition: background 0.2s;
+    align-items: start;
   }
-  .exp-item:first-child { border-top: 1px solid var(--border); }
-  .exp-year { font-size: 11px; color: var(--accent); letter-spacing: 0.1em; padding-top: 4px; }
+  .exp-dot-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .exp-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .exp-content { }
+  .exp-year { font-size: 11px; color: var(--accent); letter-spacing: 0.05em; line-height: 1.6; }
   .exp-company {
     font-family: 'Outfit', sans-serif;
     font-size: 22px;
@@ -807,6 +928,9 @@
     <div class="project-card reveal">
       <div class="project-num">01</div>
       <div class="project-type">Fintech · AI 챗봇 · 키움증권</div>
+      <div class="project-period">
+        <span class="period-label">2024.09 — 진행중</span>
+      </div>
       <h3 class="project-title">키우Me<br>AI 자산관리 챗봇</h3>
        <p class="project-desc">
         · 주식·ETF·펀드·채권 등 금융 상품 콘텐츠 화면 개발<br>
@@ -825,6 +949,9 @@
     <div class="project-card reveal reveal-delay-1">
       <div class="project-num">02</div>
       <div class="project-type">Fintech · 금융사기 예방 · 산업부 과제</div>
+      <div class="project-period">
+        <span class="period-label">2025.03 — 진행중</span>
+      </div>
       <h3 class="project-title">하마터면<br>디지털 금융사기 체험</h3>
       <p class="project-desc">
         · 산업통상자원부 정부과제 기반 AI 금융사기 예방 서비스 개발<br>
@@ -844,6 +971,9 @@
     <div class="project-card reveal reveal-delay-2">
       <div class="project-num">03</div>
       <div class="project-type">Fintech · 투자 신호 서비스</div>
+      <div class="project-period">
+        <span class="period-label">2023.05 — 2024.08</span>
+      </div>
       <h3 class="project-title">키움 퀀트 /<br>한경 신호캐치</h3>
       <p class="project-desc">
         · 키움증권 퀀트·영웅로직 서비스 프론트엔드 개발 및 컴포넌트 최적화<br>
@@ -885,21 +1015,27 @@
     <div class="about-right reveal reveal-delay-1">
       <ul class="exp-list">
         <li class="exp-item">
-          <div class="exp-year">2022 —<br>현재</div>
+          <div class="exp-dot-row">
+            <div class="exp-year">2022 — 현재</div>
+          </div>
           <div>
             <div class="exp-company">(주)씽크풀</div>
             <div class="exp-role">Frontend Engineer</div>
           </div>
         </li>
         <li class="exp-item">
-          <div class="exp-year">2021 —<br>2021</div>
+          <div class="exp-dot-row">
+            <div class="exp-year">2021 — 2021</div>
+          </div>
           <div>
             <div class="exp-company">코벡스(주)</div>
             <div class="exp-role">Frontend Developer</div>
           </div>
         </li>
         <li class="exp-item">
-          <div class="exp-year">2017 —<br>2021</div>
+          <div class="exp-dot-row">
+            <div class="exp-year">2017 — 2021</div>
+          </div>
           <div>
             <div class="exp-company">세명대학교</div>
             <div class="exp-role">정보통신학부</div>
@@ -945,7 +1081,7 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Skill bar animation
+
   const barObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -956,6 +1092,18 @@
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.skill-card').forEach(el => barObserver.observe(el));
+
+  // Period bar animation
+  const periodObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.period-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.project-card').forEach(el => periodObserver.observe(el));
 </script>
 </body>
 </html>
