@@ -170,6 +170,9 @@
     opacity: 0;
     animation: fadeUp 1.2s 0.2s ease forwards;
   }
+  .hero-bg-text-print {
+    display: none;
+  }
 
   .hero-content {
     grid-column: 1;
@@ -600,7 +603,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start;
+    align-items: center;
   }
   .about-left {}
   .about-body { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 40px; }
@@ -718,6 +721,10 @@
 
   /* ---- PRINT (PDF) STYLES ---- */
   @media print {
+    @page {
+      size: A4 landscape;
+      margin: 12mm 16mm;
+    }
     *, *::before, *::after {
       animation: none !important;
       transition: none !important;
@@ -729,7 +736,19 @@
     .footer-links { display: none !important; }
 
     .reveal { opacity: 1 !important; transform: none !important; }
-    .hero-bg-text, .hero-tag, .hero-name, .hero-role, .hero-desc, .hero-cta, .hero-stats { opacity: 1 !important; }
+    .hero-bg-text, .hero-tag, .hero-name, .hero-role, .hero-desc, .hero-cta, .hero-stats { opacity: 1 !important; animation: none !important; }
+    .hero-bg-text { display: none !important; }
+    .hero-bg-text-print {
+      display: block !important;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 180px;
+      color: #e8ecf4;
+      line-height: 1;
+      text-align: right;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+    .hero-right { display: flex !important; }
 
     .exp-list::before {
       left: 10px !important;
@@ -764,6 +783,40 @@
       border-bottom: 1px solid var(--border);
     }
 
+    /* 푸터가 단독 페이지로 넘어가지 않도록 */
+    footer {
+      page-break-before: avoid !important;
+      margin-top: 0 !important;
+      padding: 24px 0 !important;
+    }
+
+    /* About 섹션과 푸터 사이 여백 최소화 */
+    #about {
+      padding-bottom: 20px !important;
+    }
+
+    /* About 타임라인 정렬 고정 */
+    .about-inner {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      align-items: center !important;
+      gap: 48px !important;
+    }
+    .about-left, .about-right {
+      width: 100% !important;
+      align-self: center !important;
+    }
+    .about-body {
+      font-size: 13px !important;
+      line-height: 1.7 !important;
+      margin-bottom: 0 !important;
+    }
+    .exp-item {
+      grid-template-columns: 120px 1fr !important;
+      gap: 16px !important;
+      padding-bottom: 24px !important;
+    }
+
     /* 프로젝트 카드: PDF용 레이아웃 최적화 */
     .project-card {
       grid-template-columns: 60px 1fr 0.75fr !important;
@@ -786,8 +839,18 @@
       transform: translateY(14px) !important;
     }
 
+    /* 기술스택 한 페이지에 유지 */
+    .skills {
+      page-break-inside: avoid !important;
+    }
+    .skills-grid {
+      grid-template-columns: repeat(4, 1fr) !important;
+      page-break-inside: avoid !important;
+    }
+    .skill-card {
+      padding: 24px 20px !important;
+    }
     .skill-card { background: var(--bg2) !important; border: 1px solid var(--border) !important; }
-    .project-card { background: var(--bg) !important; }
     .projects-list { background: var(--bg) !important; }
 
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
@@ -839,6 +902,7 @@
     </div>
   </div>
   <div class="hero-right">
+    <div class="hero-bg-text-print">DEV</div>
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-num">5+</div>
@@ -1042,11 +1106,13 @@
         <div class="project-body">
           <p class="project-desc">
             · 키움증권 퀀트·영웅로직 서비스 프론트엔드 개발 및 컴포넌트 최적화<br>
+            · ApexCharts 기반 수익률 차트, 캔들스틱 차트 등 커스텀 금융 차트 개발<br>
             · 한경 신호캐치 리뉴얼로 투자 신호 UI·로직 개선
           </p>
           <div class="project-tech">
             <span class="tag">Vue.js</span>
             <span class="tag">JavaScript</span>
+            <span class="tag">ApexCharts</span>
             <span class="tag">RESTful API</span>
           </div>
         </div>
