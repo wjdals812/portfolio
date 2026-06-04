@@ -27,7 +27,6 @@
     background: var(--bg);
     color: var(--text);
     font-family: 'Outfit', sans-serif;
-
     font-size: 14px;
     line-height: 1.6;
     overflow-x: hidden;
@@ -203,7 +202,6 @@
     font-size: clamp(48px, 6vw, 96px);
     line-height: 1.0;
     letter-spacing: -0.02em;
-
     margin-bottom: 12px;
     opacity: 0;
     animation: fadeUp 0.8s 0.7s ease forwards;
@@ -213,7 +211,6 @@
   .hero-role {
     font-family: 'Outfit', sans-serif;
     font-size: clamp(18px, 2.5vw, 28px);
-
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
@@ -296,7 +293,6 @@
   .stat-num {
     font-family: 'Outfit', sans-serif;
     font-size: 56px;
-
     color: var(--accent);
     line-height: 1;
     letter-spacing: 0.02em;
@@ -340,7 +336,6 @@
   .section-title {
     font-family: 'Outfit', sans-serif;
     font-size: clamp(36px, 4vw, 60px);
-
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
@@ -351,9 +346,7 @@
     margin-top: 8px;
   }
 
-  .chart-section {
-    margin-top: 60px;
-  }
+  .chart-section { margin-top: 60px; }
   .chart-title {
     font-size: 11px;
     text-transform: uppercase;
@@ -361,32 +354,11 @@
     color: var(--muted);
     margin-bottom: 40px;
   }
-  .charts-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px 48px;
-  }
-  .chart-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .donut {
-    width: 100px;
-    height: 100px;
-  }
-  .chart-label {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    text-align: center;
-  }
-  .chart-pct {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-  }
+  .charts-wrap { display: flex; flex-wrap: wrap; gap: 40px 48px; }
+  .chart-item { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .donut { width: 100px; height: 100px; }
+  .chart-label { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; text-align: center; }
+  .chart-pct { font-size: 13px; font-weight: 500; color: var(--text); }
 
   /* ---- SKILLS ---- */
   .skills { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -414,11 +386,7 @@
   }
   .skill-card:hover { background: var(--surface); }
   .skill-card:hover::before { transform: scaleX(1); }
-  .skill-icon {
-    font-size: 28px;
-    margin-bottom: 20px;
-    display: block;
-  }
+  .skill-icon { font-size: 28px; margin-bottom: 20px; display: block; }
   .skill-name {
     font-family: 'Outfit', sans-serif;
     font-size: 18px;
@@ -522,43 +490,52 @@
   .exp-item:first-child { border-top: none; }
 
   /* ---- PROJECTS ---- */
-  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+  }
   .project-card {
     background: var(--bg);
-    padding: 48px;
+    padding: 60px 48px;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    display: grid;
+    grid-template-columns: 80px 1fr 0.85fr;
+    gap: 48px;
+    align-items: center;
     transition: background 0.3s;
   }
-  .project-card:first-child { grid-row: span 2; }
   .project-card:hover { background: var(--surface); }
   .project-num {
     font-family: 'Outfit', sans-serif;
-    font-size: 80px;
-
+    font-size: 60px;
     color: var(--dim);
-    line-height: 1;
-    margin-bottom: 24px;
+    line-height: 0.9;
     transition: color 0.3s;
   }
   .project-card:hover .project-num { color: var(--border); }
+
+  .project-header { display: flex; flex-direction: column; }
   .project-type {
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--accent);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
   .project-title {
     font-family: 'Outfit', sans-serif;
-    font-size: clamp(24px, 2.5vw, 36px);
-
-    line-height: 1.2;
-    margin-bottom: 16px;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.15;
+    margin-bottom: 24px;
   }
-  .project-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
-  .project-tech { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+
+  .project-body { display: flex; flex-direction: column; }
+  .project-desc { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
+  .project-tech { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+
   .project-link {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 11px;
@@ -567,20 +544,56 @@
     color: var(--text);
     text-decoration: none;
     transition: color 0.2s;
+    margin-top: auto;
   }
   .project-link:hover { color: var(--accent); }
   .project-link::after { content: '→'; transition: transform 0.2s; }
   .project-link:hover::after { transform: translateX(4px); }
+
   .project-img {
     position: absolute;
     bottom: 0; right: 0;
-    width: 180px; height: 180px;
+    width: 240px; height: 240px;
     background: var(--dim);
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    opacity: 0.15;
+    opacity: 0.1;
     transition: opacity 0.3s, width 0.3s, height 0.3s;
   }
-  .project-card:hover .project-img { opacity: 0.25; width: 200px; height: 200px; }
+  .project-card:hover .project-img { opacity: 0.2; width: 260px; height: 260px; }
+
+  /* ---- PROJECT VISUAL (mobile screenshots) ---- */
+  .project-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 8px 0;
+    max-width: 300px;
+    justify-self: end;
+  }
+  .mockup-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .mockup-wrap:nth-child(2) { transform: translateY(20px); }
+  .mockup-wrap:nth-child(4) { transform: translateY(20px); }
+  .mockup-screen {
+    display: block;
+    width: 100%;
+    max-height: 210px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(27,46,107,0.13), 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid rgba(27,46,107,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .project-card:hover .mockup-screen {
+    box-shadow: 0 12px 36px rgba(27,46,107,0.18), 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .project-card:hover .mockup-wrap:nth-child(1) { transform: rotate(-2deg) translateY(-4px); }
+  .project-card:hover .mockup-wrap:nth-child(2) { transform: rotate(1deg) translateY(12px); }
+  .project-card:hover .mockup-wrap:nth-child(3) { transform: rotate(2deg) translateY(4px); }
+  .project-card:hover .mockup-wrap:nth-child(4) { transform: rotate(-1deg) translateY(20px); }
 
   /* ---- ABOUT ---- */
   .about-inner {
@@ -619,60 +632,9 @@
   .exp-company {
     font-family: 'Outfit', sans-serif;
     font-size: 22px;
-
     margin-bottom: 4px;
   }
   .exp-role { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
-
-  /* ---- CONTACT ---- */
-  .contact { background: var(--bg2); border-top: 1px solid var(--border); }
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .contact-big {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(40px, 5vw, 72px);
-
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-  }
-  .contact-big em { font-style: italic; color: var(--accent2); }
-  .contact-form { display: flex; flex-direction: column; gap: 20px; }
-  .form-group { display: flex; flex-direction: column; gap: 8px; }
-  .form-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
-  .form-input, .form-textarea {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-
-    padding: 12px 0;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
-  .form-textarea { resize: none; height: 100px; }
-  .form-submit {
-    align-self: flex-start;
-    background: var(--accent);
-    color: #fff;
-    font-family: 'Outfit', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 14px 32px;
-    cursor: none;
-    transition: background 0.2s, transform 0.2s;
-    margin-top: 8px;
-    border: none;
-  }
-  .form-submit:hover { background: #253d8a; transform: translateY(-2px); }
 
   /* ---- FOOTER ---- */
   footer {
@@ -708,7 +670,6 @@
   .marquee-item {
     font-family: 'Outfit', sans-serif;
     font-size: 13px;
-
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--muted);
@@ -743,8 +704,7 @@
     .hero-right { display: none; }
     section { padding: 80px 24px; }
     .skills-grid { grid-template-columns: 1fr 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card:first-child { grid-row: auto; }
+    .project-card { grid-template-columns: 1fr; gap: 24px; padding: 40px 24px; }
     .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 48px; }
     footer { flex-direction: column; gap: 20px; text-align: center; }
     .section-header { flex-direction: column; gap: 12px; }
@@ -754,6 +714,83 @@
   }
   @media (max-width: 600px) {
     .skills-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---- PRINT (PDF) STYLES ---- */
+  @media print {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    body { cursor: auto; background: #fff !important; }
+    .cursor, .cursor-ring { display: none !important; }
+    nav { display: none !important; }
+    .hero-scroll, .marquee-wrap { display: none !important; }
+    .footer-links { display: none !important; }
+
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .hero-bg-text, .hero-tag, .hero-name, .hero-role, .hero-desc, .hero-cta, .hero-stats { opacity: 1 !important; }
+
+    .exp-list::before {
+      left: 10px !important;
+      border-left: 2px solid var(--border) !important;
+      background: transparent !important;
+      width: 0 !important;
+    }
+    .exp-item {
+      padding-left: 42px !important;
+    }
+    .exp-item::before {
+      box-shadow: none !important;
+      border: 3px solid var(--accent) !important;
+      background: #fff !important;
+      left: 5px !important;
+    }
+    .exp-dot {
+      border: 3px solid var(--accent) !important;
+      background: #fff !important;
+    }
+
+    .skill-bar-fill[data-width="92"] { width: 92% !important; }
+    .skill-bar-fill[data-width="88"] { width: 88% !important; }
+    .skill-bar-fill[data-width="80"] { width: 80% !important; }
+    .skill-bar-fill[data-width="70"] { width: 70% !important; }
+
+    .hero { min-height: auto !important; padding: 60px 0 !important; }
+    section { padding: 40px 0 !important; page-break-inside: avoid; }
+
+    .project-card, .skill-card, .exp-item {
+      page-break-inside: avoid;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* 프로젝트 카드: PDF용 레이아웃 최적화 */
+    .project-card {
+      grid-template-columns: 60px 1fr 0.75fr !important;
+      gap: 36px !important;
+      padding: 32px 0 !important;
+    }
+
+    /* 목업 이미지 PDF 크기 고정 */
+    .project-visual {
+      max-width: 240px !important;
+      gap: 10px !important;
+    }
+    .mockup-screen {
+      max-height: 170px !important;
+      border-radius: 10px !important;
+      box-shadow: 0 4px 12px rgba(27,46,107,0.12) !important;
+    }
+    .mockup-wrap:nth-child(2),
+    .mockup-wrap:nth-child(4) {
+      transform: translateY(14px) !important;
+    }
+
+    .skill-card { background: var(--bg2) !important; border: 1px solid var(--border) !important; }
+    .project-card { background: var(--bg) !important; }
+    .projects-list { background: var(--bg) !important; }
+
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
   }
 </style>
 </head>
@@ -924,67 +961,133 @@
       <div class="section-line"></div>
     </div>
   </div>
-  <div class="projects-grid">
+  <div class="projects-list">
     <div class="project-card reveal">
       <div class="project-num">01</div>
-      <div class="project-type">Fintech · AI 챗봇 · 키움증권</div>
-      <div class="project-period">
-        <span class="period-label">2024.09 — 진행중</span>
+      <div class="project-info">
+        <div class="project-header">
+          <div class="project-type">Fintech · AI 챗봇 · 키움증권</div>
+          <h3 class="project-title">키우Me<br>AI 자산관리 챗봇</h3>
+          <div class="project-period">
+            <span class="period-label">2024.09 — 진행중</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            · 주식·ETF·펀드·채권 등 금융 상품 콘텐츠 화면 개발<br>
+            · 레거시 jQuery → Vue.js 전환 및 재사용 가능한 Mixin 컴포넌트 개발<br>
+            · 베타 기간 이슈 직접 발견·개선으로 운영 안정화 기여<br>
+            · 시나리오 기반 테스트 케이스 작성 및 QA 직접 진행
+          </p>
+          <div class="project-tech">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Vuex</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Spring Boot</span>
+          </div>
+        </div>
       </div>
-      <h3 class="project-title">키우Me<br>AI 자산관리 챗봇</h3>
-       <p class="project-desc">
-        · 주식·ETF·펀드·채권 등 금융 상품 콘텐츠 화면 개발<br>
-        · 레거시 jQuery → Vue.js 전환 및 재사용 가능한 Mixin 컴포넌트 개발<br>
-        · 베타 기간 이슈 직접 발견·개선으로 운영 안정화 기여<br>
-        · 시나리오 기반 테스트 케이스 작성 및 QA 직접 진행
-      </p>
-      <div class="project-tech">
-        <span class="tag">Vue.js</span>
-        <span class="tag">Vuex</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Spring Boot</span>
+      <div class="project-visual">
+        <div class="mockup-wrap"><img src="kiwoome1.png" class="mockup-screen" alt="키우Me 화면 1"></div>
+        <div class="mockup-wrap"><img src="kiwoome2.png" class="mockup-screen" alt="키우Me 화면 2"></div>
+        <div class="mockup-wrap"><img src="kiwoome3.png" class="mockup-screen" alt="키우Me 화면 3"></div>
+        <div class="mockup-wrap"><img src="kiwoome4.png" class="mockup-screen" alt="키우Me 화면 4"></div>
       </div>
-      <div class="project-img"></div>
     </div>
+
     <div class="project-card reveal reveal-delay-1">
       <div class="project-num">02</div>
-      <div class="project-type">Fintech · 금융사기 예방 · 산업부 과제</div>
-      <div class="project-period">
-        <span class="period-label">2025.03 — 진행중</span>
+      <div class="project-info">
+        <div class="project-header">
+          <div class="project-type">Fintech · 금융사기 예방 · 산업부 과제</div>
+          <h3 class="project-title">하마터면<br>디지털 금융사기 체험</h3>
+          <div class="project-period">
+            <span class="period-label">2025.03 — 진행중</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            · 산업통상자원부 정부과제 기반 AI 금융사기 예방 서비스 개발<br>
+            · 액티브시니어 타겟 접근성 최적화 (버튼 확대, 고대비 색상 적용)<br>
+            · 카카오·네이버·애플 SSO 연동 및 OAuth 콜백 리다이렉트 흐름 설계<br>
+            · Flutter 네이티브 브릿지로 디바이스 ID·접속 레퍼러 서버 동기화
+          </p>
+          <div class="project-tech">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Nuxt.js</span>
+            <span class="tag">Pinia</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Flutter</span>
+          </div>
+        </div>
       </div>
-      <h3 class="project-title">하마터면<br>디지털 금융사기 체험</h3>
-      <p class="project-desc">
-        · 산업통상자원부 정부과제 기반 AI 금융사기 예방 서비스 개발<br>
-        · 액티브시니어 타겟 접근성 최적화 (버튼 확대, 고대비 색상 적용)<br>
-        · 카카오·네이버·애플 SSO 연동 및 OAuth 콜백 리다이렉트 흐름 설계<br>
-        · Flutter 네이티브 브릿지로 디바이스 ID·접속 레퍼러 서버 동기화
-      </p>
-      <div class="project-tech">
-        <span class="tag">Vue.js</span>
-        <span class="tag">Nuxt.js</span>
-        <span class="tag">Pinia</span>
-        <span class="tag">Spring Boot</span>
-        <span class="tag">Flutter</span>
+      <div class="project-visual">
+        <div class="mockup-wrap"><img src="hama1.png" class="mockup-screen" alt="하마터면 화면 1"></div>
+        <div class="mockup-wrap"><img src="hama2.png" class="mockup-screen" alt="하마터면 화면 2"></div>
+        <div class="mockup-wrap"><img src="hama3.png" class="mockup-screen" alt="하마터면 화면 3"></div>
+        <div class="mockup-wrap"><img src="hama4.png" class="mockup-screen" alt="하마터면 화면 4"></div>
       </div>
-      <div class="project-img"></div>
     </div>
+
     <div class="project-card reveal reveal-delay-2">
       <div class="project-num">03</div>
-      <div class="project-type">Fintech · 투자 신호 서비스</div>
-      <div class="project-period">
-        <span class="period-label">2023.05 — 2024.08</span>
+      <div class="project-info">
+        <div class="project-header">
+          <div class="project-type">Fintech · 투자 신호 서비스</div>
+          <h3 class="project-title">키움 퀀트 /<br>한경 신호캐치</h3>
+          <div class="project-period">
+            <span class="period-label">2023.05 — 2024.08</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            · 키움증권 퀀트·영웅로직 서비스 프론트엔드 개발 및 컴포넌트 최적화<br>
+            · 한경 신호캐치 리뉴얼로 투자 신호 UI·로직 개선
+          </p>
+          <div class="project-tech">
+            <span class="tag">Vue.js</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">RESTful API</span>
+          </div>
+        </div>
       </div>
-      <h3 class="project-title">키움 퀀트 /<br>한경 신호캐치</h3>
-      <p class="project-desc">
-        · 키움증권 퀀트·영웅로직 서비스 프론트엔드 개발 및 컴포넌트 최적화<br>
-        · 한경 신호캐치 리뉴얼로 투자 신호 UI·로직 개선<br>
-      </p>
-      <div class="project-tech">
-        <span class="tag">Vue.js</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">RESTful API</span>
+      <div class="project-visual">
+        <div class="mockup-wrap"><img src="quant1.png" class="mockup-screen" alt="퀀트 화면 1"></div>
+        <div class="mockup-wrap"><img src="quant2.png" class="mockup-screen" alt="퀀트 화면 2"></div>
+        <div class="mockup-wrap"><img src="quant3.png" class="mockup-screen" alt="퀀트 화면 3"></div>
+        <div class="mockup-wrap"><img src="quant4.png" class="mockup-screen" alt="퀀트 화면 4"></div>
       </div>
-      <div class="project-img"></div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-3">
+      <div class="project-num">04</div>
+      <div class="project-info">
+        <div class="project-header">
+          <div class="project-type">Fintech · 전문가 분석 플랫폼</div>
+          <h3 class="project-title">AI 씽크풀<br>전문가 홈</h3>
+          <div class="project-period">
+            <span class="period-label">2022.01 — 진행중</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            · 전문가 그룹 소개 화면 내 키워드 표시 UI 유연성 개선<br>
+            · Vue.js 컴포넌트 재사용성 강화 및 렌더링 최적화<br>
+            · 프론트엔드 단에서 Raw 데이터를 기획에 맞게 가공 및 처리
+          </p>
+          <div class="project-tech">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Nuxt.js</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-visual">
+        <div class="mockup-wrap"><img src="thinkpool1.png" class="mockup-screen" alt="씽크풀 화면 1"></div>
+        <div class="mockup-wrap"><img src="thinkpool2.png" class="mockup-screen" alt="씽크풀 화면 2"></div>
+        <div class="mockup-wrap"><img src="thinkpool3.png" class="mockup-screen" alt="씽크풀 화면 3"></div>
+        <div class="mockup-wrap"><img src="thinkpool4.png" class="mockup-screen" alt="씽크풀 화면 4"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1007,9 +1110,6 @@
         AI 툴을 적극적으로 활용하며, 빠르게 변화하는 개발 환경 속에서도 유연하게 적응하고 있습니다.<br><br>
         지금까지 쌓아온 경험을 바탕으로 <strong>더 큰 규모의 서비스</strong>에 도전하고 싶습니다. 프론트엔드를 넘어 백엔드까지<br> 아우르는 <strong>풀스택 개발자</strong>로 성장하는 것이 목표입니다.
       </p>
-      <div class="hero-cta">
-        <a href="#" class="btn-primary">이력서 다운로드</a>
-      </div>
     </div>
     <div class="about-right reveal reveal-delay-1">
       <ul class="exp-list">
@@ -1078,7 +1178,6 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
 
   const barObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
