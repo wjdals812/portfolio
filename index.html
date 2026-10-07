@@ -577,8 +577,7 @@
     position: relative;
     flex-shrink: 0;
   }
-  .mockup-wrap:nth-child(2) { transform: translateY(20px); }
-  .mockup-wrap:nth-child(4) { transform: translateY(20px); }
+  .mockup-wrap:nth-child(even) { transform: translateY(20px); }
   .mockup-screen {
     display: block;
     width: 100%;
@@ -646,7 +645,7 @@
     display: flex; align-items: center; justify-content: space-between;
   }
   .footer-copy { font-size: 11px; color: var(--dim); }
-  .footer-links { display: flex; gap: 32px; }
+  /* .footer-links { display: flex; gap: 32px; } */
   .footer-links a {
     font-size: 11px;
     color: var(--muted);
@@ -834,8 +833,7 @@
       border-radius: 10px !important;
       box-shadow: 0 4px 12px rgba(27,46,107,0.12) !important;
     }
-    .mockup-wrap:nth-child(2),
-    .mockup-wrap:nth-child(4) {
+    .mockup-wrap:nth-child(even) {
       transform: translateY(14px) !important;
     }
 
@@ -879,7 +877,7 @@
     <div class="hero-tag">Frontend Developer · Incheon, Korea</div>
     <div class="hero-name-photo">
       <div class="profile-img-box">
-        <img src="profile.jpg" alt="프로필 사진" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <img src="images/profile.jpg" alt="프로필 사진" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="profile-placeholder"><span>사진</span></div>
       </div>
       <div>
@@ -894,6 +892,7 @@
     <div class="hero-contact-info">
       <span class="contact-item">📧 wjdals09812@naver.com</span>
       <span class="contact-item">📱 010-9965-6497</span>
+      <span class="contact-item">🔗 github.com/wjdals812</span>
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">
@@ -1027,8 +1026,45 @@
   </div>
   <div class="projects-list">
 
-    <div class="project-card reveal ">
+    <div class="project-card reveal">
       <div class="project-num">01</div>
+      <div class="project-info">
+        <div class="project-header">
+          <div class="project-type">Fintech · 주식 투자 보조 · 앱 웹뷰</div>
+          <h3 class="project-title">라씨매매비서<br>팩터 애널리스트 / 트리거뷰</h3>
+          <div class="project-period">
+            <span class="period-label">2026.06 — 진행중</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">
+            · Flutter 앱 웹뷰와 일반 브라우저를 동시 지원하는 Nuxt 4 프론트엔드 설계·구현·운영 (커밋 337건)<br>
+            · 앱 브릿지 인증 Key 중복 조회·500ms 대기 손실 제거 및 결제자/비결제자 마스킹 판정 통일<br>
+            · 스타일 전환 시 응답 뒤섞임(경쟁 상태)을 요청 세대 관리로 해결, iOS 도넛 차트 지연 렌더로 진입 성능 개선<br>
+            · 앱 백키 레이어 공통 컴포저블 설계로 13개 화면 적용, 3개 기능 동시 오픈(2026.09.23)
+          </p>
+          <div class="project-tech">
+            <span class="tag">Nuxt 4</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Pinia</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">Chart.js</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-visual">
+        <div class="mockup-wrap"><img src="images/rassi1.png" class="mockup-screen" alt="라씨매매비서 메인 화면"></div>
+        <div class="mockup-wrap"><img src="images/rassi2.png" class="mockup-screen" alt="라씨매매비서 가격선행 스타일 Pick5"></div>
+        <div class="mockup-wrap"><img src="images/rassi3.png" class="mockup-screen" alt="라씨매매비서 팩터 게이지"></div>
+        <div class="mockup-wrap"><img src="images/rassi4.png" class="mockup-screen" alt="라씨매매비서 밸류에이션 상세"></div>
+        <div class="mockup-wrap"><img src="images/rassi5.png" class="mockup-screen" alt="라씨매매비서 EY 점수 상세"></div>
+        <div class="mockup-wrap"><img src="images/rassi6.png" class="mockup-screen" alt="라씨매매비서 성과 추적 차트"></div>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-num">02</div>
       <div class="project-info">
         <div class="project-header">
           <div class="project-type">Fintech · 금융사기 예방 · 산업부 과제</div>
@@ -1054,15 +1090,15 @@
         </div>
       </div>
       <div class="project-visual">
-        <div class="mockup-wrap"><img src="hama1.png" class="mockup-screen" alt="하마터면 화면 1"></div>
-        <div class="mockup-wrap"><img src="hama2.png" class="mockup-screen" alt="하마터면 화면 2"></div>
-        <div class="mockup-wrap"><img src="hama3.png" class="mockup-screen" alt="하마터면 화면 3"></div>
-        <div class="mockup-wrap"><img src="hama4.png" class="mockup-screen" alt="하마터면 화면 4"></div>
+        <div class="mockup-wrap"><img src="images/hama1.png" class="mockup-screen" alt="하마터면 화면 1"></div>
+        <div class="mockup-wrap"><img src="images/hama2.png" class="mockup-screen" alt="하마터면 화면 2"></div>
+        <div class="mockup-wrap"><img src="images/hama3.png" class="mockup-screen" alt="하마터면 화면 3"></div>
+        <div class="mockup-wrap"><img src="images/hama4.png" class="mockup-screen" alt="하마터면 화면 4"></div>
       </div>
     </div>
 
     <div class="project-card reveal reveal-delay-1">
-      <div class="project-num">02</div>
+      <div class="project-num">03</div>
       <div class="project-info">
         <div class="project-header">
           <div class="project-type">Fintech · AI 챗봇 · 키움증권</div>
@@ -1086,15 +1122,15 @@
         </div>
       </div>
       <div class="project-visual">
-        <div class="mockup-wrap"><img src="kiwoome1.png" class="mockup-screen" alt="키우Me 화면 1"></div>
-        <div class="mockup-wrap"><img src="kiwoome2.png" class="mockup-screen" alt="키우Me 화면 2"></div>
-        <div class="mockup-wrap"><img src="kiwoome3.png" class="mockup-screen" alt="키우Me 화면 3"></div>
-        <div class="mockup-wrap"><img src="kiwoome4.png" class="mockup-screen" alt="키우Me 화면 4"></div>
+        <div class="mockup-wrap"><img src="images/kiwoome1.png" class="mockup-screen" alt="키우Me 화면 1"></div>
+        <div class="mockup-wrap"><img src="images/kiwoome2.png" class="mockup-screen" alt="키우Me 화면 2"></div>
+        <div class="mockup-wrap"><img src="images/kiwoome3.png" class="mockup-screen" alt="키우Me 화면 3"></div>
+        <div class="mockup-wrap"><img src="images/kiwoome4.png" class="mockup-screen" alt="키우Me 화면 4"></div>
       </div>
     </div>
 
     <div class="project-card reveal reveal-delay-2">
-      <div class="project-num">03</div>
+      <div class="project-num">04</div>
       <div class="project-info">
         <div class="project-header">
           <div class="project-type">Fintech · 투자 신호 서비스</div>
@@ -1118,15 +1154,15 @@
         </div>
       </div>
       <div class="project-visual">
-        <div class="mockup-wrap"><img src="quant1.png" class="mockup-screen" alt="퀀트 화면 1"></div>
-        <div class="mockup-wrap"><img src="quant2.png" class="mockup-screen" alt="퀀트 화면 2"></div>
-        <div class="mockup-wrap"><img src="quant3.png" class="mockup-screen" alt="퀀트 화면 3"></div>
-        <div class="mockup-wrap"><img src="quant4.png" class="mockup-screen" alt="퀀트 화면 4"></div>
+        <div class="mockup-wrap"><img src="images/quant1.png" class="mockup-screen" alt="퀀트 화면 1"></div>
+        <div class="mockup-wrap"><img src="images/quant2.png" class="mockup-screen" alt="퀀트 화면 2"></div>
+        <div class="mockup-wrap"><img src="images/quant3.png" class="mockup-screen" alt="퀀트 화면 3"></div>
+        <div class="mockup-wrap"><img src="images/quant4.png" class="mockup-screen" alt="퀀트 화면 4"></div>
       </div>
     </div>
 
     <div class="project-card reveal reveal-delay-3">
-      <div class="project-num">04</div>
+      <div class="project-num">05</div>
       <div class="project-info">
         <div class="project-header">
           <div class="project-type">Fintech · 전문가 분석 플랫폼</div>
@@ -1149,10 +1185,10 @@
         </div>
       </div>
       <div class="project-visual">
-        <div class="mockup-wrap"><img src="thinkpool1.png" class="mockup-screen" alt="씽크풀 화면 1"></div>
-        <div class="mockup-wrap"><img src="thinkpool2.png" class="mockup-screen" alt="씽크풀 화면 2"></div>
-        <div class="mockup-wrap"><img src="thinkpool3.png" class="mockup-screen" alt="씽크풀 화면 3"></div>
-        <div class="mockup-wrap"><img src="thinkpool4.png" class="mockup-screen" alt="씽크풀 화면 4"></div>
+        <div class="mockup-wrap"><img src="images/thinkpool1.png" class="mockup-screen" alt="씽크풀 화면 1"></div>
+        <div class="mockup-wrap"><img src="images/thinkpool2.png" class="mockup-screen" alt="씽크풀 화면 2"></div>
+        <div class="mockup-wrap"><img src="images/thinkpool3.png" class="mockup-screen" alt="씽크풀 화면 3"></div>
+        <div class="mockup-wrap"><img src="images/thinkpool4.png" class="mockup-screen" alt="씽크풀 화면 4"></div>
       </div>
     </div>
   </div>
